@@ -1,0 +1,6 @@
+{
+  "jsonImages": "./data/images.json",
+  "jsonMyImages": "./data/myImages.json",
+  "jsonSaveStyle": "./data/saveStyle.json",
+  "jsonUser": "./data/user.json"
+}
