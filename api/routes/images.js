@@ -45,17 +45,18 @@ router.post('/api/login', (req, res) => {
 		user = req.body,
 		login = data.some(userName => userName.login === user.login);
 
-	if (!login) {
-		data.push(user);
-		fs.writeFileSync(dataUser, JSON.stringify(data));
-	} else {
-		const password = data.some(userName => (userName.password === user.password && userName.login === user.login));
+	if (login) {
+            const password = data.some(userName => (userName.password === user.password && userName.login === user.login));
 
-		if (password) {
-			res.send(password);
-		} else {
-			res.send(password);
-		}
+            if (password) {
+                res.send(password);
+            } else {
+                res.send(password);
+            }
+	} else {
+            data.push(user);
+            fs.writeFileSync(config.get('jsonUser'), JSON.stringify(data));
+            res.send(!login);
 	}
 });
 
