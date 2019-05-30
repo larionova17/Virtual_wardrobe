@@ -16,7 +16,7 @@
   flex-direction: column;
   min-height: 100vh;
   max-width: 1600px;
-  min-width: 420px;
+  min-width: 360px;
   padding: 0 50px;
   margin-left: auto;
   margin-right: auto;
@@ -35,6 +35,10 @@
   display: flex;
   height: 100px;
   align-items: center;
+
+  @media (max-width: 768px) {
+    height: 60px;
+  }
 }
 
 .footer-container {
@@ -49,9 +53,21 @@ header {
   align-items: center;
   font-size: 26px;
 
+  @media (max-width: 768px) {
+    font-size: 16px;
+  }
+
   .header-title {
     font-size: 65px;
     color: @green;
+
+    @media (max-width: 768px) {
+      font-size: 45px;
+    }
+
+    @media (max-width: 380px) {
+      font-size: 35px;
+    }
   }
 
   .header-login {
@@ -97,6 +113,17 @@ button {
 .button-image {
   display: flex;
 
+  button {
+    @media (max-width: 768px) {
+      font-size: 16px;
+      height: 40px;
+    }
+
+    @media (max-width: 380px) {
+        font-size: 9px;
+        padding: 0;
+    }
+  }
 }
 
 .save-image {
@@ -140,6 +167,12 @@ main {
 
     @media (max-width: 1024px) {
       font-size: 24px;
+      width: 300px;
+    }
+
+    @media (max-width: 768px) {
+      font-size: 16px;
+      width: 200px;
     }
 
     div.shelf-name {
@@ -152,10 +185,13 @@ main {
 
       @media (max-width: 1024px) {
         padding: 16px;
+        width: 300px;
       }
 
-      @media (max-width: 950px) {
-        width: 300px;
+      @media (max-width: 768px) {
+        padding: 18px;
+        height: 55px;
+        width: 200px;
       }
     }
 
@@ -165,10 +201,19 @@ main {
       align-items: center;
       flex-wrap: wrap;
 
+      @media (max-width: 768px) {
+        justify-content: inherit;
+      }
+
       img {
         @media (max-width: 1024px) {
           width: 150px;
           height: 200px;
+        }
+
+        @media (max-width: 768px) {
+          width: 100px;
+          height: 150px;
         }
       }
     }
@@ -183,6 +228,10 @@ main {
   margin-top: 515px;
   text-align: center;
   height: 100px;
+
+  @media (max-width: 768px) {
+    margin-top: 545px;
+  }
 }
 
 #camera {
@@ -229,6 +278,10 @@ a {
 .photo {
   text-align: center;
   height: 100px;
+
+  @media (max-width: 768px) {
+    margin-bottom: 40px;
+  }
 }
 
 .icon-camera,
@@ -240,13 +293,26 @@ a {
   color: @pink;
   margin: 0;
 
+  @media (max-width: 768px) {
+    height: 70px;
+    width: 70px;
+  }
+
   & span {
     font-size: 15px;
     display: inline-block;
+
+    @media (max-width: 768px) {
+      font-size: 12px;
+    }
   }
 
   &::before {
     font-size: 55px;
+
+    @media (max-width: 768px) {
+      font-size: 25px;
+    }
   }
 }
 
@@ -444,8 +510,20 @@ a {
   width: 234.5px;
   font-size: 14px;
 
+  @media (max-width: 1100px) {
+    width: 150px;
+  }
+
+  @media (max-width: 768px) {
+    width: 110px;
+  }
+
   &:nth-of-type(1) {
     margin-top: 50px;
+
+    @media (max-width: 768px) {
+      margin: 0;
+    }
   }
 }
 
@@ -506,6 +584,11 @@ label {
   width: 100px;
   height: 100px;
   align-self: flex-start;
+
+  @media (max-width: 768px) {
+    height: 70px;
+    width: 70px;
+  }
 }
 
 .crop,
@@ -542,8 +625,34 @@ label {
   flex-wrap: wrap;
   margin: 0 auto;
 
+  > button {
+    @media (max-width: 1100px) {
+      width: 150px;
+      font-size: 16px;
+    }
+
+    @media (max-width: 768px) {
+      width: 110px;
+      font-size: 12px;
+      height: 30px;
+    }
+  }
+
   > div {
     margin-top: 30px;
+
+    > button {
+      @media (max-width: 1100px) {
+        width: 150px;
+        font-size: 16px;
+      }
+
+      @media (max-width: 768px) {
+        width: 110px;
+        font-size: 12px;
+        height: 30px;
+      }
+    }
   }
 }
 
@@ -618,7 +727,6 @@ form {
       width: 278px;
     }
   }
-
 
   .login-help {
     margin: 20px 0;
@@ -709,105 +817,3 @@ form {
     line-height: 34px;
   }
 }
-
-@media (max-width: 768px) {
-  .button-image > button {
-    font-size: 16px;
-    height: 40px;
-  }
-
-  .header-container {
-    header {
-      font-size: 16px;
-
-      .header-title {
-        font-size: 45px;
-      }
-    }
-  }
-
-  .header-container,
-  .footer-container {
-    height: 60px;
-  }
-
-  div.wardrobe {
-    font-size: 16px;
-    width: 200px;
-
-    div.shelf-name {
-      padding: 18px;
-      height: 55px;
-      width: 200px;
-    }
-    div.shelf-items {
-      justify-content: inherit;
-
-      img {
-        width: 100px;
-        height: 150px;
-      }
-    }
-  }
-
-  label, .icon-camera, .icon-trash {
-    height: 70px;
-    width: 70px;
-
-    span {
-      font-size: 12px;
-    }
-  }
-
-  i.icon.icon-camera::before, i.icon.icon-trash::before {
-    font-size: 25px;
-  }
-
-  .photo {
-    margin-bottom: 40px;
-  }
-
-  .trash {
-    margin-top: 545px;
-  }
-
-  form .button-edit > button,
-  form .button-edit > div > button {
-    width: 110px;
-    font-size: 12px;
-    height: 30px;
-  }
-
-  .button-edit .category-file > div {
-    width: 110px;
-  }
-
-  .category-file > div:nth-of-type(1) {
-    margin: 0;
-  }
-}
-
-
-
-@media (max-width: 1100px) {
-  .button-edit > button,
-  .button-edit > div > button {
-    width: 150px;
-    font-size: 16px;
-  }
-
-  .category-file > div {
-    width: 150px;
-  }
-}
-
-@media (max-width: 380px){
-   .header-container header .header-title {
-      font-size: 35px;
-   }
-  .button-image > button {
-    font-size: 9px;
-    padding:0;
-  }
-}
-
